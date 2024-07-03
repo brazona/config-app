@@ -1,0 +1,80 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+spring:
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: 'true'
+        temp:
+          use_jdbc_metadata_defaults: 'false'
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+    jakarta:
+      persistence:
+        schema-generation:
+          database:
+            action: none
+          scripts:
+            action: none
+            create-source: metadata
+            create-target: ./api/src/main/resources/db/script/schema.sql
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db-api
+    password: 783388
+    username: idp_dev
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      connection-timeout: '20000'
+      idle-timeout: '10000'
+      maximum-pool-size: '40'
+      auto-commit: 'true'
+      minimum-idle: '10'
+  liquibase:
+    url: jdbc:postgresql://localhost:5432/db-api
+    password: 783388
+    user: idp_dev
+    enabled: true
+    change-log: classpath:db/changelog-master.yml
+    #    change-log: classpath:db_version/changelog-master.yml
+    parameters:
+      sql_user_name_1: user1
+      sql_user_name_2: user2
+      sql_user_name_3: user3
+      sql_user_name_4: user4
+
+logging:
+  level:
+    liquibase: INFO
+    org:
+      hibernate: INFO
+      springframework:
+        security: TRACE
+        data: INFO
+
+springdoc:
+  swagger-ui:
+    csrf:
+      enabled: true
+  api-docs:
+    path: /api-docs
+
+jwt:
+  secret: RXN0aGVyemluaGFBbW9yRGFNaW5oYVZpZGE=
+  expiration_ms: 86000000
+  auth:
+    converter:
+      resource-id: idp
+      principal-attribute: principal_username
+
+keycloak:
+  url: http://localhost:8081/realms/brazona
+  name: idp
+  grant: password
+  client:
+    id: idp
+    secret: mwbc1c6qJL2ifrBdqA5X26cDpxEoDSsS
