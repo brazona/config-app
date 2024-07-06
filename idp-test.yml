@@ -72,15 +72,22 @@ jwt:
       principal-attribute: principal_username
 
 keycloak:
+  image: keycloak/keycloak:latest
   url: http://localhost:8081/realms/brazona
   name: idp
   grant: password
+  admin:
+    username: admin
+    password: admin
   client:
     id: idp
     secret: mwbc1c6qJL2ifrBdqA5X26cDpxEoDSsS
 
 
-test:
-  container:
-    postgresql:
-      port: 5564
+
+postgresql:
+  port: 5564
+  username: admin
+  password: admin
+  db: test
+  image: postgres:12-alpine
