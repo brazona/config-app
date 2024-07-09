@@ -28,7 +28,7 @@ spring:
             create-source: metadata
             create-target: ./api/src/main/resources/db/script/schema.sql
   datasource:
-    url: jdbc:postgresql://localhost:5434/idp
+    url: jdbc:postgresql://db_api_local/idp
     password: 123456
     username: idp_dev
     driver-class-name: org.postgresql.Driver
@@ -39,7 +39,7 @@ spring:
       auto-commit: 'true'
       minimum-idle: '10'
   liquibase:
-    url: jdbc:postgresql://localhost:5434/idp
+    url: jdbc:postgresql://db_api_local/idp
     password: 123456
     user: idp_dev
     enabled: true
@@ -76,7 +76,7 @@ jwt:
       principal-attribute: principal_username
 
 keycloak:
-  url: http://localhost:8084/realms/brazona
+  url: http://keycloak_local/realms/brazona
   name: idp
   grant: password
   client:
