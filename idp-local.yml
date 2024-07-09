@@ -53,12 +53,12 @@ spring:
 
 logging:
   level:
-    liquibase: INFO
+    liquibase: DEBUG
     org:
-      hibernate: INFO
+      hibernate: DEBUG
       springframework:
         security: TRACE
-        data: INFO
+        data: DEBUG
 
 springdoc:
   swagger-ui:
