@@ -3,6 +3,10 @@ server:
   servlet:
     context-path: /api
 spring:
+  docker:
+    compose:
+      enabled: true
+      file: compose.yml
   jpa:
     properties:
       hibernate:
