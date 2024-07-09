@@ -3,10 +3,10 @@ server:
   servlet:
     context-path: /api
 spring:
-  # docker:
-  #   compose:
-  #     enabled: true
-  #     file: ./api/src/main/resources/compose.yml
+  docker:
+    compose:
+      enabled: true
+      # file: ./api/src/main/resources/compose.yml
   jpa:
     properties:
       hibernate:
@@ -17,7 +17,7 @@ spring:
           use_jdbc_metadata_defaults: 'false'
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     jakarta:
       persistence:
         schema-generation:
@@ -42,7 +42,7 @@ spring:
     url: jdbc:postgresql://localhost:5434/idp
     password: 123456
     user: idp_dev
-    enabled: false
+    enabled: true
     change-log: classpath:db/changelog-master.yml
     #    change-log: classpath:db_version/changelog-master.yml
     parameters:
