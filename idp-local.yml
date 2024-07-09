@@ -17,7 +17,7 @@ spring:
           use_jdbc_metadata_defaults: 'false'
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     jakarta:
       persistence:
         schema-generation:
@@ -42,7 +42,7 @@ spring:
     url: jdbc:postgresql://db_api_local/idp
     password: 123456
     user: idp_dev
-    enabled: true
+    enabled: false
     change-log: classpath:db/changelog-master.yml
     #    change-log: classpath:db_version/changelog-master.yml
     parameters:
