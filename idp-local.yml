@@ -6,7 +6,7 @@ spring:
   docker:
     compose:
       enabled: true
-      # file: ./api/src/main/resources/compose.yml
+      file: ./api/src/main/resources/docker-compose.yml
   jpa:
     properties:
       hibernate:
