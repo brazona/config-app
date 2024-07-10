@@ -78,7 +78,7 @@ jwt:
       principal-attribute: principal_username
 
 keycloak:
-  url: http://keycloak_local/realms/brazona
+  url: http://localhost:8084/realms/brazona
   name: idp
   grant: password
   client:
