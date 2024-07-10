@@ -84,4 +84,4 @@ keycloak:
   grant: password
   client:
     id: idp
-    secret: mwbc1c6qJL2ifrBdqA5X26cDpxEoDSsS
+    secret: TxlXTAfkYYSOMjpzRSoSbZ75V0oplE4f
