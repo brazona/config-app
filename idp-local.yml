@@ -43,7 +43,7 @@ spring:
     url: jdbc:postgresql://localhost:5434/idp
     password: 123456
     user: idp_dev
-    schema: api
+    default-schema: api
     enabled: true
     change-log: classpath:db/changelog-master.yml
     #    change-log: classpath:db_version/changelog-master.yml
