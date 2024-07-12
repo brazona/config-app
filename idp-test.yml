@@ -6,6 +6,7 @@ spring:
   jpa:
     properties:
       hibernate:
+        default_schema: api
         jdbc:
           lob:
             non_contextual_creation: 'true'
@@ -13,7 +14,7 @@ spring:
           use_jdbc_metadata_defaults: 'false'
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: none
+      ddl-auto: validate
     jakarta:
       persistence:
         schema-generation:
@@ -27,6 +28,7 @@ spring:
     url: jdbc:postgresql://localhost:5433/db-api
     password: 123456
     username: idp_dev
+    schema: api
     driver-class-name: org.postgresql.Driver
     hikari:
       connection-timeout: '20000'
@@ -38,6 +40,7 @@ spring:
     url: jdbc:postgresql://localhost:5433/db-api
     password: 123456
     user: idp_dev
+    default-schema: api
     enabled: true
     change-log: classpath:db/changelog-master.yml
     #    change-log: classpath:db_version/changelog-master.yml
