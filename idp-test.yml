@@ -87,6 +87,10 @@ keycloak:
     secret: BNUGEtF3P62q1FQpyIHMMDCw6mtTedVN
     # secret: TxlXTAfkYYSOMjpzRSoSbZ75V0oplE4f
 
+testcontainers:
+  reuse:
+    enable: true
+
 
 
 postgresql:
